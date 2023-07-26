@@ -43,7 +43,7 @@ Process to a raster data set.
 library(dplyr)
 library(terra)
 files <- tibble::tibble(fullname = fs::dir_ls("~/bower_dir/", recurse = T, regexp = ".*(tif|hdf)$"))
-
+print(files)
 hdfiles <- files |> filter(grepl(".*hdf$", fullname))
 files <- files |> filter(grepl(".*tif$", fullname))
 

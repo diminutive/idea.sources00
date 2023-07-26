@@ -20,6 +20,9 @@ print(x$source_url)
 x$name <- "(RECENT ONLY) Artist AMSR2 near-real-time 3.125km sea ice concentration"
 x$method[[1]]$level <- 3
 x$method[[1]]$accept_download <- "Antarctic3125/asi.*\\.(tif|hdf)$"
+## can we do an vector OR on dates above
+x$method[[1]]$accept_download <- sprintf("Antarctic3125/asi.*(%s).*\\.(tif|hdf)$", paste0(format(dates, "%Y%m%d"), collapse = "|"))
+
 x$collection_size <- 0.01
 ## add this data source to the configuration
 cf <- bb_add(cf, x)

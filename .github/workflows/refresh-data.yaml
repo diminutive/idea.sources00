@@ -24,10 +24,10 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v2
 
       - name: Get data
-        run: Rscript -e 'source(here::here("data-raw", "run.R"), echo = TRUE)'
+        run: Rscript -e 'source("data-raw/run.R", echo = TRUE)'
 
       - name: Render README
-        run: Rscript -e 'rmarkdown::render(here::here("README.Rmd"))'
+        run: Rscript -e 'rmarkdown::render("README.Rmd")'
 
       - name: Commit
         run: |

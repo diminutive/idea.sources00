@@ -26,5 +26,7 @@ The goal of raadle.humm is to ...
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-fs::dir_ls(file.path(tempdir(), "bower"), recurse = TRUE)
+datadir <- normalizePath(file.path("~", "bower_dir"), mustWork = FALSE) #"/bower"
+
+fs::dir_ls(datadir, recurse = TRUE)
 ```

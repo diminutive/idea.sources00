@@ -1,5 +1,6 @@
 library(bowerbird)
-datadir <- file.path(tempdir(), "bower") #"/bower"
+datadir <- normalizePath(file.path("~", "bower_dir"), mustWork = FALSE) #"/bower"
+if (!file.exists(datadir)) dir.create(datadir)
 cf <- bb_config(local_file_root = datadir)
 
 dates <- Sys.Date() - (10:0)

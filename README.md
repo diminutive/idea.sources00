@@ -13,6 +13,8 @@ The goal of raadle.humm is to …
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(bowerbird)
-## basic example code
+datadir <- normalizePath(file.path("~", "bower_dir"), mustWork = FALSE) #"/bower"
+
+fs::dir_ls(datadir, recurse = TRUE)
+#> character(0)
 ```

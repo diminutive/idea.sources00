@@ -26,6 +26,5 @@ The goal of raadle.humm is to ...
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(bowerbird)
-## basic example code
+fs::dir_ls("/bower", recurse = TRUE)
 ```

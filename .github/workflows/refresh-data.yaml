@@ -27,7 +27,7 @@ jobs:
         run: Rscript -e 'install.packages("pak")'
 
       - name: install packages
-        run: Rscript -e 'pak::pak("ropensci/bowerbird")'
+        run: Rscript -e 'pak::pak(c("ropensci/bowerbird", "fs"))'
 
       - name: Get data
         run: Rscript -e 'source("data-raw/run.R", echo = TRUE)'

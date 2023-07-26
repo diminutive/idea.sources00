@@ -31,7 +31,7 @@ jobs:
 
       - name: run data getter
         run: Rscript -e 'source("data-raw/run.R", echo = TRUE)'
-        '
+
       - name: Render README
         run: Rscript -e 'rmarkdown::render("README.Rmd")'
 

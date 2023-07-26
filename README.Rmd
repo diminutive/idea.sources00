@@ -27,7 +27,8 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 datadir <- normalizePath(file.path("~", "bower_dir"), mustWork = FALSE) #"/bower"
-
+print(datadir)
+print(here::here("data-raw"))
 fs::dir_ls(datadir, recurse = TRUE)
 
 

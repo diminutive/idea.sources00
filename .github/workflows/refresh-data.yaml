@@ -27,7 +27,7 @@ jobs:
         run: Rscript -e 'install.packages("pak")'
 
       - name: install packages
-        run: Rscript -e 'pak::pak(c("ropensci/bowerbird", "AustralianAntarcticDivision/blueant", "fs")); source("data-raw/run.R", echo = TRUE)'
+        run: Rscript -e 'pak::pak(c("ropensci/bowerbird", "AustralianAntarcticDivision/blueant", "fs", "here")); source("data-raw/run.R", echo = TRUE)'
 
       - name: Render README
         run: Rscript -e 'rmarkdown::render("README.Rmd")'

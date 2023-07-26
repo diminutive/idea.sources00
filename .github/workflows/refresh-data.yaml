@@ -30,7 +30,7 @@ jobs:
       #  run: Rscript -e 'pak::pak(c("ropensci/bowerbird", "AustralianAntarcticDivision/blueant", "fs", "here", "dplyr", "terra")) '
 
       - name: install this
-        run: Rscript -e 'pak::pak(".")'
+        run: Rscript -e 'pak::pak(".", dependencies = TRUE)'
 
       - name: run data getter
         run: Rscript -e 'source("data-raw/run.R", echo = TRUE)'

@@ -23,6 +23,12 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v2
 
+      - name: install pak
+        run: Rscript -e 'install.packages("pak")'
+
+      - name: install packages
+        run: Rscript -e 'pak::pak("ropensci/bowerbird")'
+
       - name: Get data
         run: Rscript -e 'source("data-raw/run.R", echo = TRUE)'
 

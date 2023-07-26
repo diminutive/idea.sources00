@@ -26,10 +26,9 @@ The goal of raadle.humm is to ...
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-datadir <- normalizePath(file.path("~", "bower_dir"), mustWork = FALSE) #"/bower"
+## this was set in the data-raw/run.R job
+datadir <- normalizePath(file.path("~", "bower_dir"), mustWork = FALSE) 
 print(datadir)
-print(here::here("data-raw"))
-fs::dir_ls(datadir, recurse = TRUE)
 
 ```
 
@@ -48,9 +47,11 @@ files <- files |> filter(grepl(".*tif$", fullname))
 
 
 r <- rast(files$fullname[nrow(files)])
+date <- as.Date(strptime(stringr::str_extract(basename(files$fullname[nrow(files)]), "[0-9]{8}"), "%Y%m%d"))
 coltab(r) <- NULL
 r[r > 100] <- NA
 plot(r, col = hcl.colors(101))
+title(sprintf("Antarctic sea ice %s (AMSR 3152m)", format(date)))
 contour(r, level = 15, add = T, lwd = 2)
 ```
 
@@ -65,5 +66,14 @@ hdf <- flip(hdf)
 plot(r)
 contour(hdf, add = TRUE, lwd = 2, level = 15)
 plot(abs(r - hdf))  ## see there is sub-integer information (do we care?)
+```
+
+
+It *seems* to be enough with terra to flip the Y part of the extent, and we don't have to go through the warper? 
+
+```{r flip}
+vrt <- vapour::vapour_vrt(hdfiles$fullname[nrow(hdfiles)], extent = c(-3950000, 3950000, -3950000, 4350000)[c(1, 2, 4, 3)], crs = "EPSG:3976")
+plot(rast(vrt), col = c("black", colorRampPalette(c("white", "grey", "aliceblue",  "dodgerblue"))(99)))
+contour(r, level = 15, add = TRUE, col = "green", lwd = 3)
 ```
 

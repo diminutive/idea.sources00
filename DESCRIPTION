@@ -13,4 +13,10 @@ BugReports: https://github.com/diminutive/raadle.humm/issues
 Imports: 
     bowerbird,
     vapour
-Remotes: ropensci/bowerbird
+Remotes: ropensci/bowerbird, AustralianAntarcticDivision/blueant
+Suggests: 
+    blueant,
+    dplyr,
+    fs,
+    here,
+    terra

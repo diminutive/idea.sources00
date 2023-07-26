@@ -19,7 +19,7 @@ print(x$source_url)
 
 x$name <- "(RECENT ONLY) Artist AMSR2 near-real-time 3.125km sea ice concentration"
 x$method[[1]]$level <- 3
-x$method[[1]]$accept_download <- "Antarctic3125/asi.*\\.tif$"
+x$method[[1]]$accept_download <- "Antarctic3125/asi.*\\.(tif|hdf)$"
 x$collection_size <- 0.01
 ## add this data source to the configuration
 cf <- bb_add(cf, x)

@@ -27,7 +27,7 @@ jobs:
         run: Rscript -e 'install.packages("pak")'
 
       - name: install packages
-        run: Rscript -e 'pak::pak(c("ropensci/bowerbird", "AustralianAntarcticDivision/blueant", "fs", "here", "dplyr", "terra") '
+        run: Rscript -e 'pak::pak(c("ropensci/bowerbird", "AustralianAntarcticDivision/blueant", "fs", "here", "dplyr", "terra")) '
 
       - name: install this
         run: Rscript -e 'pak::pak(".")'

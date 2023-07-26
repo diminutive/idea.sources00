@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main]
   schedule:
-     - cron: ' 0   12    *   *   * '
+     - cron: '0 12 * * *'
 
 name: refresh-data
 
@@ -26,10 +26,7 @@ jobs:
       - name: install pak
         run: Rscript -e 'install.packages("pak")'
 
-      #- name: install packages
-      #  run: Rscript -e 'pak::pak(c("ropensci/bowerbird", "AustralianAntarcticDivision/blueant", "fs", "here", "dplyr", "terra")) '
-
-      - name: install this
+      - name: install idea.sources00 (includes package dependencies for examples and readme)
         run: Rscript -e 'pak::pak(".", dependencies = TRUE)'
 
       - name: run data getter

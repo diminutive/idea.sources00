@@ -32,5 +32,4 @@ print(here::here("data-raw"))
 fs::dir_ls(datadir, recurse = TRUE)
 
 
-read.csv("files.csv")
 ```

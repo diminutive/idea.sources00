@@ -21,3 +21,4 @@ x$collection_size <- 0.01
 cf <- bb_add(cf, x)
 
 status <- bb_sync(cf, verbose = TRUE, create_root = TRUE)
+write.csv(status$files, "files.csv", row.names = FALSE)

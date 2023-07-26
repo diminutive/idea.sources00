@@ -1,12 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# raadle.humm
+# idea.sources00
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of raadle.humm is to …
+The goal of idea.sources00 is to get data with IDEA tools, see script in
+data-raw/ this is triggered by github actions.
 
 ## Example
 

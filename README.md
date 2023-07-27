@@ -43,7 +43,7 @@ library(terra)
 #> terra 1.7.39
 files <- tibble::tibble(fullname = fs::dir_ls("~/bower_dir/", recurse = T, regexp = ".*(tif|hdf)$"))
 print(files)
-#> # A tibble: 36 × 1
+#> # A tibble: 40 × 1
 #>    fullname                                                                     
 #>    <fs::path>                                                                   
 #>  1 …daygrid_swath/s3125/2023/jul/Antarctic3125/asi-AMSR2-s3125-20230717-v5.4.hdf
@@ -56,7 +56,7 @@ print(files)
 #>  8 …i_daygrid_swath/s3125/2023/jul/Antarctic3125/asi-AMSR2-s3125-20230718-v5.tif
 #>  9 …daygrid_swath/s3125/2023/jul/Antarctic3125/asi-AMSR2-s3125-20230719-v5.4.hdf
 #> 10 …daygrid_swath/s3125/2023/jul/Antarctic3125/asi-AMSR2-s3125-20230719-v5.4.tif
-#> # ℹ 26 more rows
+#> # ℹ 30 more rows
 hdfiles <- files |> filter(grepl(".*hdf$", fullname))
 files <- files |> filter(grepl(".*tif$", fullname))
 

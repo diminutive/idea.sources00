@@ -46,16 +46,16 @@ print(files)
 #> # A tibble: 10 × 1
 #>    fullname                                                                     
 #>    <fs::path>                                                                   
-#>  1 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230824-v5.4.hdf
-#>  2 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230824-v5.4.tif
-#>  3 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230825-v5.4.hdf
-#>  4 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230825-v5.4.tif
-#>  5 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230826-v5.4.hdf
-#>  6 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230826-v5.4.tif
-#>  7 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230827-v5.4.hdf
-#>  8 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230827-v5.4.tif
-#>  9 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230828-v5.4.hdf
-#> 10 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230828-v5.4.tif
+#>  1 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230826-v5.4.hdf
+#>  2 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230826-v5.4.tif
+#>  3 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230827-v5.4.hdf
+#>  4 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230827-v5.4.tif
+#>  5 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230828-v5.4.hdf
+#>  6 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230828-v5.4.tif
+#>  7 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230829-v5.4.hdf
+#>  8 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230829-v5.4.tif
+#>  9 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230830-v5.4.hdf
+#> 10 …daygrid_swath/s3125/2023/aug/Antarctic3125/asi-AMSR2-s3125-20230830-v5.4.tif
 hdfiles <- files |> filter(grepl(".*hdf$", fullname))
 files <- files |> filter(grepl(".*tif$", fullname))
 

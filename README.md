@@ -43,17 +43,19 @@ library(terra)
 #> terra 1.7.39
 files <- tibble::tibble(fullname = fs::dir_ls("~/bower_dir/", recurse = T, regexp = ".*(tif|hdf)$"))
 print(files)
-#> # A tibble: 8 × 1
-#>   fullname                                                                      
-#>   <fs::path>                                                                    
-#> 1 …_daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230902-v5.4.hdf
-#> 2 …_daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230902-v5.4.tif
-#> 3 …_daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230903-v5.4.hdf
-#> 4 …_daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230903-v5.4.tif
-#> 5 …_daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230904-v5.4.hdf
-#> 6 …_daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230904-v5.4.tif
-#> 7 …_daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230905-v5.4.hdf
-#> 8 …_daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230905-v5.4.tif
+#> # A tibble: 10 × 1
+#>    fullname                                                                     
+#>    <fs::path>                                                                   
+#>  1 …daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230902-v5.4.hdf
+#>  2 …daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230902-v5.4.tif
+#>  3 …daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230903-v5.4.hdf
+#>  4 …daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230903-v5.4.tif
+#>  5 …daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230904-v5.4.hdf
+#>  6 …daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230904-v5.4.tif
+#>  7 …daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230905-v5.4.hdf
+#>  8 …daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230905-v5.4.tif
+#>  9 …daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230906-v5.4.hdf
+#> 10 …daygrid_swath/s3125/2023/sep/Antarctic3125/asi-AMSR2-s3125-20230906-v5.4.tif
 hdfiles <- files |> filter(grepl(".*hdf$", fullname))
 files <- files |> filter(grepl(".*tif$", fullname))
 
